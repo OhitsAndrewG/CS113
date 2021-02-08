@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.miracosta.cs113.TermTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-02-08T08:35:10" hostname="Andrews-MacBook-Pro.local" time="0.008">
+  <properties/>
+  <testcase name="testGetSetExponent" classname="edu.miracosta.cs113.TermTest" time="0.002"/>
+  <testcase name="testCopyConstructor" classname="edu.miracosta.cs113.TermTest" time="0.001"/>
+  <testcase name="testCompareTo" classname="edu.miracosta.cs113.TermTest" time="0.0"/>
+  <testcase name="testFullConstructor" classname="edu.miracosta.cs113.TermTest" time="0.0"/>
+  <testcase name="testEqualsTrue" classname="edu.miracosta.cs113.TermTest" time="0.0"/>
+  <testcase name="testGetSetCoefficient" classname="edu.miracosta.cs113.TermTest" time="0.0"/>
+  <testcase name="testSetAll" classname="edu.miracosta.cs113.TermTest" time="0.0"/>
+  <testcase name="testDefaultConstructor" classname="edu.miracosta.cs113.TermTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
