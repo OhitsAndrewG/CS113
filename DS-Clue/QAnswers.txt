@@ -1,0 +1,7 @@
+How often do you get a solution in fewer than 20 guesses? Does this change depending on the theory you test (1, 2, 3)?
+
+It's seems that you wouldn't get a solution fewer than 20 guesses for most of the cases. The chances of you getting one below would have to be the ones that are fixed cases but the one that applies a random case every time it compiles is going to be much more difficult.
+
+What is good or bad about this strategy?
+
+Based off my strategy it checks the weapon, location, and murder based off of what the check master method provided. Depending on what is given it will increment whatever either one of the three until it finds the right theory.
