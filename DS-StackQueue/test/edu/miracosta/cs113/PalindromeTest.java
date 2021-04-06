@@ -106,6 +106,7 @@ public class PalindromeTest {
     @Test
     public void testSimpleTrueCases() {
         for (int i = 0; i < SIMPLE_TRUE.length; i ++) {
+        	System.out.println("[simple true case]");
             assertTrue((i + " This test is a palindrome"), isPalindrome(SIMPLE_TRUE[i]));
         }
     }
@@ -113,6 +114,7 @@ public class PalindromeTest {
     @Test
     public void testSimpleFalseCases() {
         for (int i = 0; i < SIMPLE_FALSE.length; i ++) {
+        	System.out.println("[simple false case]");
             assertFalse((i + " This test is NOT a palindrome"), isPalindrome(SIMPLE_FALSE[i]));
         }
     }
@@ -137,6 +139,7 @@ public class PalindromeTest {
 
     @Test
     public void testCaseSensitivityCases() {
+    	System.out.println("[Case sensitivity]");
         for (int i = 0; i < CASE_SENSITIVE_TRUE.length; i ++) {
             assertTrue((i + " This test is a palindrome"), isPalindrome(CASE_SENSITIVE_TRUE[i]));
         }
@@ -146,6 +149,7 @@ public class PalindromeTest {
     public void testComplexCases() {
     	
         for (int i = 0; i < COMPLEX_TRUE.length; i ++) {
+        	System.out.println("[complex case]");
             assertTrue((i + " This test is a palindrome"), isPalindrome(COMPLEX_TRUE[i]));
         }
     }
