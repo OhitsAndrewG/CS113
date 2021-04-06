@@ -6,7 +6,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-/**
+/** 
  * PalindromeTest : a test class for isPalindrome, a method intended to utilize stacks to evaluate if a given
  * string is a palindrome.
  *
@@ -41,12 +41,35 @@ public class PalindromeTest {
      * @return returns true if a palindrome (ignoring whitespace and case sensitivity), false otherwise
      */
     private boolean isPalindrome(String s) {
-
-        // TODO:
-        // Implement this method body using your ArrayListStack. Be mindful of your algorithm!
-        return false;
+    	ArrayListStack<Character> newStack = new ArrayListStack<Character>();
+    	String reversed;
+    	
+    	
+		for(int i = 0; i < s.length(); i ++) {
+    		newStack.push(s.charAt(i));
+    	}
+    	
+    	StringBuilder result = new StringBuilder();
+    	while(!newStack.empty()) {
+    		result.append(newStack.pop());
+    	}
+    	reversed = result.toString();
+    	
+    	return s.equalsIgnoreCase(reversed);
+    	
+    	
+    	
+    	
+    	
 
     } // End of method isPalindrome
+    
+    
+    
+    
+    
+    
+    
 
     @Test
     public void testErrors() {
