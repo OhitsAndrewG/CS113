@@ -41,22 +41,46 @@ public class PalindromeTest {
      * @return returns true if a palindrome (ignoring whitespace and case sensitivity), false otherwise
      */
     private boolean isPalindrome(String s) {
+    	
     	ArrayListStack<Character> newStack = new ArrayListStack<Character>();
     	String reversed;
+    	boolean finalAnswer = false;
+    	
+    	if(s == null) {
+    		throw new IllegalArgumentException();
+    	}
+    	
+    	
+    	s = s.replaceAll(" ", "");
     	
     	
 		for(int i = 0; i < s.length(); i ++) {
     		newStack.push(s.charAt(i));
     	}
     	
+		int count = 0;
     	StringBuilder result = new StringBuilder();
     	while(!newStack.empty()) {
     		result.append(newStack.pop());
     	}
     	reversed = result.toString();
     	
-    	return s.equalsIgnoreCase(reversed);
+    	reversed = reversed.replaceAll(" ", "");
     	
+    	
+    	System.out.println(reversed);
+    	System.out.println(s);
+    	
+    	finalAnswer = s.equalsIgnoreCase(reversed);
+    	
+    	System.out.println(finalAnswer);
+    	
+    	System.out.println();
+    	System.out.println();
+    	
+    	
+    	
+    	return finalAnswer;
     	
     	
     	
@@ -95,14 +119,18 @@ public class PalindromeTest {
 
     @Test
     public void testWhitespaceTrueCases() {
+    	
         for (int i = 0; i < WHITE_SPACE_TRUE.length; i ++) {
+        	System.out.println("[space true case]");
             assertTrue((i + " This test is a palindrome"), isPalindrome(WHITE_SPACE_TRUE[i]));
         }
     }
 
     @Test
     public void testWhitespaceFalseCases() {
+    	
         for (int i = 0; i < WHITE_SPACE_FALSE.length; i ++) {
+        	System.out.println("[space false case]");
             assertFalse((i + " This test is NOT a palindrome"), isPalindrome(WHITE_SPACE_FALSE[i]));
         }
     }
@@ -116,6 +144,7 @@ public class PalindromeTest {
 
     @Test
     public void testComplexCases() {
+    	
         for (int i = 0; i < COMPLEX_TRUE.length; i ++) {
             assertTrue((i + " This test is a palindrome"), isPalindrome(COMPLEX_TRUE[i]));
         }
