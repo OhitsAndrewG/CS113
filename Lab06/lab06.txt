@@ -1,0 +1,28 @@
+1.
+a. Each and every Node in a single Linked List, has a reference to a data field and a reference
+b. In a double linked list, each node has a reference to its previous, and next node, and its data field
+c. To remove an item from a single linked list you need to reference to next.next which is the current nodes next.next
+d. To remove an item for a double Linked list you need to change the the node being removed next previous reference, as well as change the nodes previous next reference.
+
+
+
+2.
+a.it seems that its getting the node before the tail then calls itself again then makes its the new tail
+b.it seems to be replacing the head node.
+c. It seems to be adding the node after the head. Then its seems to replace the head node. I say this because the last two lines head.next.prev is a reference to itself, which is the head of the linked list, but then it assigned the new nodRef to it which will make it the new head. After its done that, it makes the the new heads next Equal to the new nodeRef.
+
+
+
+3.1
+Based off of the code, it looks like its getting the index of or location of sam node, then its creating a new iterator which only contains the nodes before it. After its done that it removes its its current element which is the node behind The Sam Node. So it seems it would remove Node containing string data "Harry"
+
+3.2
+If you did this, you would get a compiling error since you'd be referencing null
+
+3.3
+If you omit that statement you would remove the node containing Sam.
+
+
+
+
+
