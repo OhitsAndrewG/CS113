@@ -37,12 +37,27 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
 	  
   }
 
-  public E get(int index) 
-  { 	ListIterator<E> iter = listIterator(index); 
-      	return iter.next();
+  public E get(int index){
+	  
+	  if(this.head == null || index >= this.size) {
+		  throw new IndexOutOfBoundsException("Ivalid Index");
+	  }else {
+		  ListIterator<E> iter = listIterator(index); 
+	      return iter.next();
+	  }
+	  
   }  
-  public E getFirst() { return head.data;  }
-  public E getLast() { return tail.data;  }
+  
+  
+  public E getFirst() { 
+	  return head.data;  
+  }
+  
+  
+  
+  public E getLast() { 
+	  return tail.data;  
+  }
 
   public int size() {  
 	  return this.size;
@@ -57,6 +72,13 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
         }
         else {   throw new IndexOutOfBoundsException();  }
         return returnValue;
+  }
+  
+  
+  public void clear() {
+	  this.head = null;
+	  this.tail = null;
+	  size = 0;
   }
 
   public Iterator iterator() { return new ListIter(0);  }
@@ -114,7 +136,7 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     
     public boolean hasPrevious()
     {
-    	return (nextItem == null && size != 0) || nextItem.prev != null;
+    	return index >0;
     	
     } // Fill Here
     
@@ -134,17 +156,29 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     } // Fill here
     
     
-    public void set(E o)  { 
-    	if(nextItem.next == null) {
-    		nextItem.data = o;
+    public void set(E o){ 
+    	
+    	if(lastItemReturned == null) {
+    		throw new IllegalStateException();
+    	}else {
+    		lastItemReturned.data = o;
     	}
     
     }  // not implemented
     
     
-    public void remove(){
-    	if(nextItem.next == null) {
-    		lastItemReturned.next = null;
+    public void remove(){   	
+    	
+    	if(lastItemReturned == null || head == null) {
+    		throw new IllegalStateException();
+    	}else if(lastItemReturned == head){
+    		head = lastItemReturned.next;
+    		head.next = lastItemReturned.next.next;
+    	}else if(lastItemReturned == tail) {
+    		lastItemReturned.prev.next = null;
+    	}else {
+    		lastItemReturned.prev.next = lastItemReturned.next;
+    		lastItemReturned.next.prev = lastItemReturned.prev;
     	}
     	
     }      // not implemented
@@ -153,18 +187,18 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
 
     public E next(){
     	 if(!(this.hasNext())) {
-    		 throw new NoSuchElementException();
+    		 throw new NoSuchElementException("invalid index");
     	 }
     	 
     	 lastItemReturned = nextItem;
     	 nextItem = nextItem.next;
     	 index++;
-    	 return nextItem.data;
+    	 return lastItemReturned.data;
     }
 
     public E previous() 
     {  
-    	if(!(this.hasPrevious())) {
+    	if(this.hasPrevious() == false) {
     		throw new NoSuchElementException();
     	}
     	
@@ -212,7 +246,7 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     		//link it to the nextItem
     		newNode.next = nextItem;
     		nextItem.prev = newNode;
-    		
+    		 
     	}
     	
     	size++;
@@ -223,27 +257,26 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     
   }// end of inner class ListIter
   
+  
+  
   public String toString() {
   	ListIterator<E> tempIter = listIterator();  //note: this ListIterator is not the default iterator since it is reassigned at line 62 - 66 so it does hold the data within
-  	String finalList = "["; 
   	
-  	while(tempIter.hasNext()) {
+  	if (this.head == null) {
+  		return "[]";
+  	}else {
+  		String result = "[";
+  		Node current = this.head;
   		
-  		if (tempIter.next() == null) {
-  			System.out.println("it works HERE");
-  			finalList += tempIter.next().toString();
-  			finalList += "]";
-  			
-  		}else{
-  			finalList += tempIter.next().toString() + ",";
-  			System.out.println(finalList);
+  		while(current.next != null) {
+  			result += current.data + ", ";
+  			current = current.next;
   		}
   		
+  		return result + current.data + "]";
   	}
   	
   	
-  			
-  	return finalList;
   
   
   }

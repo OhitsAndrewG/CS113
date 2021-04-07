@@ -824,8 +824,13 @@ public class DoubleLinkedListTest {
         stringIterator.next();
         stringIterator.remove();
         System.out.println("String list after removal: " + stringList);
+        
+        
         // Validate with list's contains method
         assertFalse("Test failed - Element at beginning of list was not removed.", stringList.contains(STRING_VALUES[0]));
+        
+        
+        
 
         // Remove from middle of list following call to next
         intIterator = intList.listIterator(INT_SET_INDEX); // index 1

@@ -9,11 +9,17 @@ public class Driver {
 		
 		newList.add(3);
 		newList.add(4);
-		newList.add(8);
+		newList.add(8); 
 		
-		System.out.println("error could be here");
+		
 		
 		System.out.println(newList.toString());
+		
+		System.out.println(newList.get(2));
+		
+		
+		
+		//System.out.println(newList.toString());
 		
 		
 	}
