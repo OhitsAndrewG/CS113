@@ -1,0 +1,2 @@
+1.)Describe the effect of each of the following operations on object myList as show at the bottom of figure 2.2. what is the value of myList.size() after each operation ?
+

@@ -7,11 +7,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.JUnitException;
 
 class JUnitDemo {
 	static private Directory directory = new Directory();
 	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
+	static void setUpBeforeClass() throws JUnitException {
 
 	}
 
@@ -20,7 +21,7 @@ class JUnitDemo {
 	}
 
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp() throws JUnitException {
 		String s = directory.addOrChangeEntry("AB", "000-000-0000");
 		s = directory.addOrChangeEntry("BB", "000-000-0001");
 		s = directory.addOrChangeEntry("CB", "000-000-0001");
