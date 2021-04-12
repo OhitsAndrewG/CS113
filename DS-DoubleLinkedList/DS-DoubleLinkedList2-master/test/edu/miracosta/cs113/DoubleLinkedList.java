@@ -2,6 +2,8 @@ package edu.miracosta.cs113;
 import java.awt.List;
 import java.util.*;
 
+import com.sun.org.apache.xml.internal.security.transforms.implementations.TransformC14NExclusiveWithComments;
+
 
 
 public class DoubleLinkedList<E> extends AbstractSequentialList<E>
@@ -167,13 +169,12 @@ public class DoubleLinkedList<E> extends AbstractSequentialList<E>
     }  // not implemented
     
     
-    public void remove(){   	
-    	
-    	if(lastItemReturned == null || head == null) {
+    public void remove(){  
+  	
+    	if(lastItemReturned == null || head == null) { //checking whether or not the item being remove is null or the entire linked list is null
     		throw new IllegalStateException();
-    	}else if(lastItemReturned == head){
-    		head = lastItemReturned.next;
-    		head.next = lastItemReturned.next.next;
+    	}else if(lastItemReturned == head){//if the last item is the head
+    		head = lastItemReturned.next;//make the node after the equal to the head
     	}else if(lastItemReturned == tail) {
     		lastItemReturned.prev.next = null;
     	}else {
