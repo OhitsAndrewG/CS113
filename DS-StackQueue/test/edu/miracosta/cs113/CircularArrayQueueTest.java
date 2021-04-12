@@ -24,7 +24,7 @@ public class CircularArrayQueueTest {
     private static final String[] STRING_VALUES = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven" };
 
     /** The initial capacity of the queue. */
-    private static final int INITIAL_CAPACITY = 5;
+    private static final int INITIAL_CAPACITY = 5; 
 
     /** Object derived from the Queue abstract class. */
     private Queue<String> circularQueue;
@@ -44,7 +44,7 @@ public class CircularArrayQueueTest {
         }
         else {
             for (int i = 0; i < numElements; i ++) {
-                circularQueue.add(STRING_VALUES[i]);
+                circularQueue.add(STRING_VALUES[i]); 
             }
         }
     }
@@ -56,7 +56,7 @@ public class CircularArrayQueueTest {
     @Before
     public void setup() {
         // Instantiate circular array queue with an initial capacity of 5
-        circularQueue = new CircularArrayQueue<String>(INITIAL_CAPACITY);
+        circularQueue = new CircularArrayQueue<String>(INITIAL_CAPACITY); 
     }
 
     // region peek and element tests
@@ -126,7 +126,7 @@ public class CircularArrayQueueTest {
     @Test
     public void testAddAfterReallocation() {
         // Populate queue to capacity with add
-        populateQueue(INITIAL_CAPACITY, false);
+        populateQueue(INITIAL_CAPACITY, false); 
 
         // Add additional elements which prompt reallocation
         circularQueue.add(STRING_VALUES[INITIAL_CAPACITY]);

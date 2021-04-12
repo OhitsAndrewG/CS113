@@ -1,6 +1,7 @@
 package edu.miracosta.cs113;
 
 import org.junit.Before;
+
 import org.junit.Test;
 
 import java.util.EmptyStackException;
@@ -19,7 +20,7 @@ public class StackTest {
     private StackInterface<Integer> stack;
 
     /** This function is executed every single time before each test runs. */
-    @Before
+    @Before 
     public void setup() {
         stack = new ArrayListStack<Integer>();
     }
