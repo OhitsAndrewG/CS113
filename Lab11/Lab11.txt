@@ -1,0 +1,47 @@
+_LAB11_
+
+1.) 
+Creates new set s
+Adds two objects to s Set
+addAll does nothing since you can't add the same data to a set
+Creates another set (t)
+Adds an object to set(t)
+Adds all of set(t) to set(s)
+Prints out true for the first statement and false for the second
+Prints out false since the set does not contain that object
+Prints out true since that object does exist in set(s)
+This should change set(t) to the objects that both set(s) and (t) contain
+The last line should print true
+
+
+1.) 
+	A. 
+	Problem: C = (a U b)(Union)
+	c.a.addAll(b)
+	
+	
+	
+	B.
+	problem: c = (a n b)(intersection)
+	c.a.retainAll(b)
+
+	C.
+	problem: c = (a - b)
+	c.remove(b)
+	
+	D.
+	b.containsAll(a)(subset)
+2.
+toString is already implemented, but you could actually...
+Use string builder to create a full string to return. You would have to use an iterator to add all the strings together.
+
+
+
+
+
+
+
+
+
+	
+		

@@ -67,7 +67,7 @@ public class PalindromeTest {
     	
     	reversed = reversed.replaceAll(" ", "");
     	
-    	
+    	 
     	System.out.println(reversed);
     	System.out.println(s);
     	

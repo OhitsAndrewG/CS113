@@ -1,0 +1,35 @@
+_Lab12_
+
+1.
+A. ISBN
+B. position
+C. Model Number
+D. course ID
+
+2.
+The key values stored would be the words in the sentences
+Line 1: this line is first
+Line 2: and line 2 is second
+Line 3: followed by the third line
+
+Note: each line would be an array
+
+_KEY_ 		_VALUE_
+This		[1]
+Line 		[1,2]
+Is		[1,2] 
+First		[1]
+And		[2] 
+2		[2]
+Second		[2]
+Followed		[3]
+By		[3]
+The		[3]
+Third		[3]
+
+
+3.
+The first two lines aren't doing much, just making the variable Lines to whatever array list/line it is calling
+The third line it is getting to array and equaling it to the variable lines
+After its adding an element to the end of both array lists
+Then its putting it into the Map and specifying its key as "is"
