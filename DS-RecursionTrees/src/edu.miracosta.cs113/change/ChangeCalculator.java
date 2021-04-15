@@ -27,8 +27,20 @@ public class ChangeCalculator {
     public static int calculateChange(int cents) {
         // TODO:
         // Implement a recursive solution following the given documentation.
-
-        return -1;
+        int coin[] = {25, 10, 5, 1};
+        									//try putting it in a set
+        if(change == 0){
+          System.out.println("this is a solution");
+          return 1;
+        }
+        if(change < 0){ 
+          return 0; 
+        }
+        
+        return recursiveChange(change - coin[0]) + recursiveChange(change - coin[1]) + recursiveChange(change - coin[2] + 
+          recursiveChange(change - coin[3]));
+    	
+        
     }
 
     /**

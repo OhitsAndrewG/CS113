@@ -24,7 +24,7 @@ class JUnitDemo {
 	void setUp() throws JUnitException {
 		String s = directory.addOrChangeEntry("AB", "000-000-0000");
 		s = directory.addOrChangeEntry("BB", "000-000-0001");
-		s = directory.addOrChangeEntry("CB", "000-000-0001");
+		s = directory.addOrChangeEntry("CB", "000-000-0001"); 
 	}
 
 	@AfterEach

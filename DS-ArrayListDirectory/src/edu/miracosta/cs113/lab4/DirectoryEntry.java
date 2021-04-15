@@ -12,9 +12,9 @@ public class DirectoryEntry {
 	        this.number = phone;
 	    }
 	    
-	    public String getNumber() {
+	    public String getNumber() { 
 	    	return number;
-	    }
+	    } 
 	    public void setNumber(String number) {
 	    	this.number = number;
 	    }

@@ -23,7 +23,7 @@ class JUnitDemo {
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	void tearDown() throws Exception { 
 	}
 
 	@Test

@@ -8,7 +8,7 @@ public class SingleLinkedList<E> {
 	        /** The data value. */
 	        private E data;
 	        /** The link */
-	        private Node<E> next = null;
+	        private Node<E> next = null; 
 
 	        /**
 	         * Construct a node with the given data value and link

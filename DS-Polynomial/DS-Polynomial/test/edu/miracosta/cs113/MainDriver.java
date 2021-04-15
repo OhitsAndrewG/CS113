@@ -68,7 +68,7 @@ public class MainDriver {
 			}while(userAnswer.equals("y") || userAnswer.equals("clear"));
 			
 			System.out.println();
-			System.out.println();
+			System.out.println(); 
 			System.out.println("--------------------------------------------------------------------------------------");
 			System.out.println("Here are your Two polynomials: " + newPoly1.toString() + " and " + newPoly2.toString());
 			System.out.println("--------------------------------------------------------------------------------------");

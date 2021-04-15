@@ -55,23 +55,23 @@ public class PalindromeTest {
     	
     	
 		for(int i = 0; i < s.length(); i ++) {
-    		newStack.push(s.charAt(i));
+    		newStack.push(s.charAt(i));		//pushing each individual char in the string to the stack LIFO
     	}
     	
 		int count = 0;
     	StringBuilder result = new StringBuilder();
     	while(!newStack.empty()) {
-    		result.append(newStack.pop());
+    		result.append(newStack.pop());			//i'm popping the the stack and  building a string, that is going to reverse the string that was put into the method
     	}
     	reversed = result.toString();
     	
-    	reversed = reversed.replaceAll(" ", "");
+    	reversed = reversed.replaceAll(" ", "");	// I replace all spaces within the string
     	
     	 
     	System.out.println(reversed);
     	System.out.println(s);
     	
-    	finalAnswer = s.equalsIgnoreCase(reversed);
+    	finalAnswer = s.equalsIgnoreCase(reversed); // comparing the initial string That I put into the method to the reversed version
     	
     	System.out.println(finalAnswer);
     	

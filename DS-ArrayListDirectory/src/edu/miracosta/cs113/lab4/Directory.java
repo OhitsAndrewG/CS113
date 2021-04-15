@@ -3,24 +3,24 @@ package edu.miracosta.cs113.lab4;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import edu.miracosta.cs113.lab4.DirectoryEntry;
 // Lab Exercise 4
 
 
+
 public class Directory {
-	private List<DirectoryEntry> theDirectory =
-			new ArrayList<>();
+	private List<DirectoryEntry> theDirectory = new ArrayList<>();
 	
 
 	/** Add an entry to theDirectory or change an existing entry.
 	 * @param aName The name of the person being added or changed
-	 * @param newNumber The new number to be assigned
+	 * @param newNumber The new number to be assigned 
 	 * @return The old number , or if a new entry, null
 	 */
 	public String addOrChangeEntry(String aName, String newNumber) {
 		DirectoryEntry dE;
 		String oldNumber = null;
-		int index = find(aName);
+		int index = find(aName); 
 
 		if (index != -1)
 			dE = theDirectory.get(index);

@@ -21,7 +21,7 @@ class JUnitDemo {
 	static void setUpBeforeClass() throws Exception {
 		System.out.println("In Set up current Size" + emps.size());
 		emps.add(new Employee(1, "Nats", 15000));
-		emps.add(new Employee(2, "Kalid", 25000));
+		emps.add(new Employee(2, "Kalid", 25000)); 
 		emps.add(new Employee(3, "Krish", 5000));		
 
 	}

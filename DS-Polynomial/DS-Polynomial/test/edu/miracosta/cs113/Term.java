@@ -41,7 +41,7 @@ public class Term implements Cloneable, Comparable<Term>{
           this.setAll(0,0);
         }
 
-        if(term.contains("x")){
+        if(term.contains("x")){ 
 
           if(term.indexOf("x") == 0 || term.indexOf("+") == 0 && term.indexOf("x") == 1){
             if(term.contains("^")){
