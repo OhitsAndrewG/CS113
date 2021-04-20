@@ -31,7 +31,8 @@ public class TermTest {
 	private static final int ORIGINAL_BEFORE_TEST = -1;
 	// private static final int ORIGINAL_AFTER_TEST = 1; //not used
 
-	@Test 
+	@Test
+	public void testGetSetCoefficient() {
 		Term test = new Term();
 
 		for (int c : COEFFICIENTS) {

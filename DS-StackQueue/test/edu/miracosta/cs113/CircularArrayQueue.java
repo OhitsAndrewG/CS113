@@ -18,13 +18,13 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E> 
 	//Default capacity of the queue
 	private static final int DEFAULT_CAPACITY = 10;
 	//array to hold the data
-	private E[] theData;
+	private E[] theData; 
 	
 	/**
 	 * constructs a queue with the default initial capacity
 	 */
 	public CircularArrayQueue() {
-		this(DEFAULT_CAPACITY);
+		this(DEFAULT_CAPACITY); 
 	}
 	
 	/*
@@ -32,7 +32,7 @@ public class CircularArrayQueue<E> extends AbstractQueue<E> implements Queue<E> 
 	 */
 	public CircularArrayQueue(int initCapacity){
 		this.capacity = initCapacity;
-		this.theData = (E[]) new Object[this.capacity];
+		this.theData = (E[]) new Object[this.capacity]; 
 		this.front = 0;
 		this.rear = this.capacity - 1; 
 		this.size = 0;
