@@ -1,15 +1,5 @@
-package edu.miracosta.cs113.change;
+package edu.miracosta.cs113;
 
-/**
- * ChangeCalculator : Class containing the recursive method calculateChange, which determines and prints all
- * possible coin combinations representing a given monetary value in cents.
- *
- * Problem derived from Koffman & Wolfgang's Data Structures: Abstraction and Design Using Java (2nd ed.):
- * Ch. 5, Programming Project #7, pg. 291.
- *
- * NOTE: An additional method, printCombinationsToFile(int), has been added for the equivalent tester file to
- * verify that all given coin combinations are unique.
- */
 public class ChangeCalculator {
 
     /**
@@ -28,7 +18,7 @@ public class ChangeCalculator {
         // TODO:
         // Implement a recursive solution following the given documentation.
 
-        return -1;
+        return -1; 
     }
 
     /**
@@ -44,5 +34,4 @@ public class ChangeCalculator {
         // TODO:
         // This when calculateChange is complete. Note that the text file must be created within this directory.
     }
-
-} // End of class ChangeCalculator
+}
