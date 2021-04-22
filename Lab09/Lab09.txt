@@ -1,0 +1,11 @@
+_Lab09_
+
+A.) 
+Pre-order: ABDFEC
+In-order: DBFEAC
+Post-order: DFEBCA
+
+B.)
+Pre-order: lay, house, cow, jack, rat, mixed, that
+In-order: cow, house, jack, lay, milked, rat, that
+Post-order: cow, jack, house, milked, that, rat, lay
