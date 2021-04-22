@@ -1,0 +1,20 @@
+_Lab08_
+Queue - Fifo
+Stack - Lifo
+
+1.) when using the elements in a Queue using just the Queue operations, you would have to clear the queue as you print each element in the Queue out on the console
+
+
+2.)
+-creates string item
+-while loop that checks whether the stack is empty
+	-make the item variable equal to the item on top of the stack then removing it from stack s
+	-adds the item that was popped (item) and adds it to the Queue (q)
+	
+-while loop that checks if the the Queue (q) is empty
+	-makes the variable (item) equal to the first item first item that was put into the queue
+	-then it gets that item and pushes it into the stack (s)
+	
+a.) After the first loop executes, nothing is stored in the stack and all of the items that were in the stack are now in the queue. 
+b.)After the second loop, all items that were in the queue are now back in the stack.
+
