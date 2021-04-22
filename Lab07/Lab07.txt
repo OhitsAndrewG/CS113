@@ -1,0 +1,47 @@
+_Lab07_
+
+
+(IN WORDS) WRITE ALGORITHMS FOR EACH ARRAYLISTSTACK METHOD USING THE ARRAYLIST<E>THEDATA:
+
+//Note: returns true if the stack is empty otherwise, return false
+Public Boolean Empty(){
+	return true if top of stack is equal to -1
+}
+
+//Note: Peek method return the object at the top of the stack without removing it
+public E peek(){
+	if the stack is empty
+		throw emptyStackException
+	return the first index of the array
+{
+
+//Note:Pop method returns the object at the top of the stack an removes it
+Public E pop(){
+	if the stack is empty
+		throw a new EmptyStackException
+	return the item on top of the stack then makes the stack one item smaller
+}
+
+//Note: Push method pushes and item onto eh top of the stack and returns the item pushed
+public E push(){
+	add to size
+	make the top of the stack index equal to the new object being put into the stack, to add to 
+	the top of the stack
+	return the obj that was inserted
+}
+
+
+USE ALL THEREE STACKS ABOVE FOR THE QUESTION BELOW:(lifo)
+
+1.) For all three stack it would perform the same behavior and result, which is adding the two names to the stack, then removing one and leaving the first name that was added to the stack
+
+Stack (A)	_Initial_	_Final_		
+		Jonathon		Jane		top = Joseph
+		Dustin		Jonathon		nextTop = Jane
+		robin 		Dustin
+		Debbie		robin
+		rich		Debbie
+				rich
+2.) This would print out all the names within the stack, as well as clear the stack one at a time as it loops
+
+3.) when using peek method, you wouldn't be clearing the stack while iterating through it
