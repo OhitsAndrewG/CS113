@@ -92,7 +92,7 @@ public class ChangeCalculatorTest {
         Set<String> combinations = new HashSet<String>(FIVES_LARGE_COMBINATIONS[0]);
 
         // Flag for reading possible duplicate values
-        boolean readSuccess = true;
+        boolean readSuccess = true; 
 
         // Call upon static method to generate text file, using 75 cents as input
         ChangeCalculator.printCombinationsToFile(FIVES_LARGE[0]);
