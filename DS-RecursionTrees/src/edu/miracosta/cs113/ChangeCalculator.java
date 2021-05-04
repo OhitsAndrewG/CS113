@@ -28,7 +28,7 @@ public class ChangeCalculator {
     public static int calculateChange(int change) {
         combos.clear();
         //its almost like and upside down recursion tree
-        ChangeCalculator.makeChange(change, 0, 0, 0, change);
+        ChangeCalculator.makeChange(change, 0, 0, 0, change); //starts at 0Q, 0D, 0N, and change = # of pennies//
         return combos.size();
     }
     
@@ -37,12 +37,12 @@ public class ChangeCalculator {
 		/*
 		Assigning the values of the coins to variables
 		*/
-		final int QUARTER = coin[0];
+		final int QUARTER = coin[0];		//the method makeChange starts with 25 pennies//
 		final int DIME = coin[1];
 		final int NICKEL = coin[2];
 		final int PENNY = coin[3];
 		
-		int addedChange = numQuar * QUARTER + numDime * DIME + numNick * NICKEL + numPenn * PENNY;
+		//int addedChange = numQuar * QUARTER + numDime * DIME + numNick * NICKEL + numPenn * PENNY;
 		
 		//I first check whether the number of change adds up the the totalChange, therefore reaches the end of the tree
 		if(numPenn < 0){
@@ -52,7 +52,7 @@ public class ChangeCalculator {
 		//creating a string of the coin combo to add to the treeSet
 		String coinCombo = "[" + numQuar + ", " + numDime + ", " + numNick + ", " + numPenn + "]";
 		
-		//contains method return true if this set contains the specified element
+		//contains method return true if this set contains the specified element, seeing if the tree set already contains the coin combo
 		boolean result = combos.contains(coinCombo);
 		
 		if(result == false){
@@ -62,7 +62,9 @@ public class ChangeCalculator {
 		  //after the combo has been added you need to look for other combinations
 		  return (makeChange(totalChange, numQuar + 1, numDime, numNick, numPenn - 25) + makeChange(totalChange, numQuar, numDime + 1, numNick, numPenn - 10) + 
 		  makeChange(totalChange, numQuar, numDime, numNick + 1, numPenn - 5)) + 1;
+		  
 		}else {
+			
 			return (makeChange(totalChange, numQuar + 1, numDime, numNick, numPenn - 25) + makeChange(totalChange, numQuar, numDime + 1, numNick, numPenn - 10) + 
 					  makeChange(totalChange, numQuar, numDime, numNick + 1, numPenn - 5));
 		}
