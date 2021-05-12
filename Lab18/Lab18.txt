@@ -1,0 +1,3 @@
+_Lab18_ 
+
+Answer: I believe the best option for this array of data would be the insertion sort, mainly because  its the worst case for both bubble sort since it already has to b in order for that sorting algorithm and for the selection sort it would have to go through every single iteration of the array since the last two digits are 1 and 2. I believe that insertion sort is the best and the second best would be selection sort.
