@@ -1,12 +1,19 @@
 package edu.miracosta.cs113;
 
-import java.io.Serializable;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.Serializable; 
 import java.util.Scanner;
 
+import edu.miracosta.cs113.BinaryTree.Node;
 
-public class BinaryTree<E> {
+
+
+public class BinaryTree<E>{
 	//instance variable which is the root Node (TOP)
 		protected Node<E> root;
+//		//data fields
+		protected boolean addReturn;
 		
 		public BinaryTree() {
 			this.root = null;
@@ -32,7 +39,7 @@ public class BinaryTree<E> {
 			if(leftTree != null) {
 				this.root.left = leftTree.root;
 			}else {
-				this.root.left = null;
+				this.root.left = null; 
 			}
 			
 			if(rightTree != null) {
@@ -42,7 +49,7 @@ public class BinaryTree<E> {
 			}
 			
 			
-		}
+		} 
 		
 		
 		public BinaryTree<E> getLeftSubtree(){
@@ -116,11 +123,15 @@ public class BinaryTree<E> {
 		}
 		
 
+	
+
+		
+
 		
 		
 		
 		//node class
-		protected static class Node<E> implements Serializable{
+		protected static class Node<E>{
 			//data field
 			protected E data;
 			//reference to left child Node

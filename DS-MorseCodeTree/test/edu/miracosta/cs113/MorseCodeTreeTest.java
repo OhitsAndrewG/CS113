@@ -21,7 +21,7 @@ public class MorseCodeTreeTest {
                                                     "--*", "****", "**",   // g, h, i
                                                     "*---", "-*-", "*-**", // j, k, l
                                                     "--", "-*", "---",     // m, n, o
-                                                    "*--*", "--*-", "*-*", // p, q, r
+                                                    "*--*", "--*-", "*-*",  // p, q, r
                                                     "***", "-", "**-",     // s, t, u
                                                     "***-", "*--", "-**-", // v, w, x
                                                     "-*--", "--**"};       // y, z
@@ -31,7 +31,7 @@ public class MorseCodeTreeTest {
                                                     "g", "h", "i", "j", "k", "l",
                                                     "m", "n", "o", "p", "q", "r",
                                                     "s", "t", "u", "v", "w", "x",
-                                                    "y", "z"};
+                                                    "y", "z"}; 
 
     /** Entries containing a series of morse code values, each representing a single letter value with dots ('*')
      *  and dashes ('-') and delimited from each other using spaces. */
@@ -80,10 +80,23 @@ public class MorseCodeTreeTest {
      */
     private void compareDecodedValues(String[] morseCode, String[] decodedValue) {
         try {
+        	
+        	System.out.println("This is the Populated Tree");
+        	System.out.println("-----------------------------");
+        	System.out.println(mct.toString());
+        	
             for (int i = 0; i < morseCode.length; i ++) {
+            	
                 String actualDecodedValue = mct.translateFromMorseCode(morseCode[i]);
+                
+                System.out.println("This is the MorseCode "+ morseCode[i]);
+                System.out.println("decoded Value: "+ decodedValue[i]);
+                System.out.println("ACTUAL RESULT: " + actualDecodedValue);
+                System.out.println("-----------------------------------");
+                
                 assertEquals("Failure for case " + i, decodedValue[i], actualDecodedValue);
             }
+            
         }
         catch (Exception e) { fail("Test failed - an Exception was thrown."); }
     }

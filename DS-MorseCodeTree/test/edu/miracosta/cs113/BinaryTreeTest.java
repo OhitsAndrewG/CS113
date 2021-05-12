@@ -79,7 +79,7 @@ public class BinaryTreeTest {
     public void testGetLeftSubtreeData() {
         // Use full constructor to create a tree with a single root 'A' and one left child 'B'.
         charTree = new BinaryTree<Character>(CHAR_INPUT[0],
-                (new BinaryTree<Character>(CHAR_INPUT[1], null, null)),
+                (new BinaryTree<Character>(CHAR_INPUT[1], null, null)), 
                 null);
 
         // Validate that left child's data is defined by the above instantiation using getLeftSubtree and getData.
@@ -140,7 +140,7 @@ public class BinaryTreeTest {
                 charTree.getRightSubtree().isLeaf());
     }
 
-    @Test
+    @Test 
     public void testIsLeafError() {
         // Use default constructor to create a new empty tree
         charTree = new BinaryTree<Character>();
@@ -163,7 +163,7 @@ public class BinaryTreeTest {
     @Test
     public void testEmptyTree() {
         // Use default constructor to create a new empty tree.
-        strTree = new BinaryTree<String>();
+        strTree = new BinaryTree<String>(); 
 
         // Validate equivalency with toString method
         assertEquals("Test empty tree with toString failed.", EMPTY_TREE, strTree.toString());
