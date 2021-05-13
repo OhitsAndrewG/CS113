@@ -11,7 +11,7 @@ import java.util.TreeSet;
 public class ChangeCalculator {
 	
 	  private static final int coin[] = {25, 10, 5, 1};
-	  private static TreeSet<String> combos = new TreeSet<>();
+	  private static TreeSet<String> combos = new TreeSet<>(); 
 
     /**
      * Wrapper method for determining all possible unique combinations of quarters, dimes, nickels, and pennies that
@@ -34,7 +34,7 @@ public class ChangeCalculator {
     
     
 	public static int makeChange(int totalChange, int numQuar, int numDime, int numNick, int numPenn){
-		/*
+		/*																		
 		Assigning the values of the coins to variables
 		*/
 		final int QUARTER = coin[0];		//the method makeChange starts with 25 pennies//
@@ -65,20 +65,18 @@ public class ChangeCalculator {
 		  
 		}else {
 			
+			
 			return (makeChange(totalChange, numQuar + 1, numDime, numNick, numPenn - 25) + makeChange(totalChange, numQuar, numDime + 1, numNick, numPenn - 10) + 
 					  makeChange(totalChange, numQuar, numDime, numNick + 1, numPenn - 5));
 		}
 		
 		
-		// if(change == 0){
-		  
-		//   return 1;
-		// }
-		// if(change < 0){
-		//   return 0;
-		// }
-		// return recursiveChange(change - coin[0]) + recursiveChange(change - coin[1]) + recursiveChange(change - coin[2] + 
-		//   recursiveChange(change - coin[3]));
+		//1: Checks whether or not the the number of pennies has reached 0, if it does it means that you've gotten all possible results (down to the penny)
+		//2: if not, then make the String of the combination
+		//3: check if the coin combination exist within the TreeSet
+		//4: if the result is false, add to the TreeSet then use recursion to make another combination
+		//5: else if it already exists in the TreeSet then don't add it and use recursion to get other combinations
+		
 	  }
 	
 	

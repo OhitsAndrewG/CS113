@@ -1,6 +1,8 @@
 package edu.miracosta.cs113;
 import java.util.*;
 
+import javax.swing.text.TabExpander;
+
 /**
  * HashTable implementation using chaining to tack a pair of key and value pairs.
  * @param <K> Generic Key
@@ -47,7 +49,7 @@ public class HashTableChain<K, V> implements Map<K, V>  {
          * @return the value
          */
         public V getValue() {
-            return value ;
+            return value ; 
         }
 
         /**
@@ -157,13 +159,59 @@ public class HashTableChain<K, V> implements Map<K, V>  {
     // returns Value if table has the searched for key
     @Override
     public V get(Object key) {
-    	// FILL HERE
+    	int index = key.hashCode() % table.length;
+    	if(index < 0) {
+    		index += table.length;
+    	}
+    	if(table[index] == null) {
+    		return null; // key is not in the table
+    	}
+    	
+    	//search the list at the table[index] to find the key
+    	for(Entry<K, V> nextItem : table[index]) {
+    		if(nextItem.key.equals(key)) {
+    			return nextItem.value;
+    		}
+    	}
+    	
+    	//assert: key is not in the table
+    	return null;
     }
 
     // adds the key and value pair to the table using hashing
     @Override
     public V put(K key, V value) {
-    	// FILL HERE
+    	int index = key.hashCode() % table.length;
+    	if(index < 0) {
+    		index += table.length;
+    	}
+    	
+    	if(table[index] == null) {
+    		//create a new linked list at table[index]
+    		table[index] = new LinkedList<Entry<K, V>>();
+    	}
+    	
+    	//search the list at the table[index] to find the key
+    	for(Entry<K, V> nextItem : table[index]) {
+    		//if the search is successful, replace the old value
+    		if(nextItem.key.equals(key)) {
+    			//replace old value for this key
+    			V oldVal = nextItem.value;
+    			nextItem.setValue(value);
+    			return oldVal;
+    		}
+    	}
+    	
+    	//assert: key is not in the table, add new item
+    	table[index].addFirst(new Entry<K, V>(key, value));
+    	numKeys++;
+    	if(numKeys > (LOAD_THRESHOLD * table.length)) {
+    		rehash();
+    	}
+    		
+    	return null;
+    	
+    	
     }
 
 
@@ -171,7 +219,9 @@ public class HashTableChain<K, V> implements Map<K, V>  {
      * Resizes the table to be 2X +1 bigger than previous
      */
     private void rehash() {
-    	// FILL HERE
+    	//save a reference to oldTable
+    	
+    	
     }
 
     @Override
