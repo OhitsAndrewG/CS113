@@ -1,0 +1,6 @@
+_Lab14_
+
+
+Path to Visit all Nodes:	[9, 10, 2, 4, 5, 3, 1, 8, 6, 7]
+Smallest Distance Path:	[2, 4, 5, 3, 6, 1, 8, 10, 9, 7]
+Total Distance: 124
