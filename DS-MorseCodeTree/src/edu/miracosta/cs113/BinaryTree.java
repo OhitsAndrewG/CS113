@@ -23,7 +23,7 @@ public class BinaryTree<E>{
 		 * this method is here because client classes do not know about the Node Class. This 
 		 * constructor can be used only in methods internal to the BinaryTree class and its subclasses
 		 */
-		protected BinaryTree(Node<E> root) {
+		protected BinaryTree(Node<E> root) { 
 			this.root = root;
 		}
 		

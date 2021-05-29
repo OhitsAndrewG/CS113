@@ -19,7 +19,7 @@ public class MorseCodeTreeTest {
     private static final String[] SINGLES_CODE = {"*-", "-***", "-*-*",    // a, b, c
                                                     "-**", "*", "**-*",    // d, e, f
                                                     "--*", "****", "**",   // g, h, i
-                                                    "*---", "-*-", "*-**", // j, k, l
+                                                    "*---", "-*-", "*-**", // j, k, l 
                                                     "--", "-*", "---",     // m, n, o
                                                     "*--*", "--*-", "*-*",  // p, q, r
                                                     "***", "-", "**-",     // s, t, u

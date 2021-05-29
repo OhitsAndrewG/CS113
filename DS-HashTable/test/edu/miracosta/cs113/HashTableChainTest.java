@@ -63,8 +63,13 @@ public class HashTableChainTest {
     public void testClear() {
         // Removes all of the mapping from this map
         populateMapWithPut(12);
+        
+//        System.out.println("THIS IS THE HASHTABLE BEFORE CLEAR METHOD" + hashTable.toString());
         hashTable.clear();
-
+//        System.out.println("THIS IS THE HASHTABLE AFTER CLEAR METHOD" + hashTable.toString());
+        
+//        System.out.println("THE TABLE IS EMPTY: " + hashTable.isEmpty());
+        
         // Validate with isEmpty
         assertTrue(hashTable.isEmpty());
     }
@@ -96,21 +101,30 @@ public class HashTableChainTest {
     }
 
     @Test
-    public void testEntrySet() {
+    public void testEntrySet() {	
         // Returns a Set view of the mappings contained in this map.
         hashTable.put("one", 1);
         hashTable.put("two", 2);
         hashTable.put("three", 3);
+        
+        
 
         // Because order is arbitrary, expect one of the following outputs from this Set's toString
         String[] expectedSets = { "[one=1, two=2, three=3]", "[one=1, three=3, two=2]", "[two=2, one=1, three=3]",
                                 "[two=2, three=3, one=1]", "[three=3, one=1, two=2]", "[three=3, two=2, one=1]" };
+        
+        
+        
 
         String setString = hashTable.entrySet().toString();
+        
+        
 
         boolean validSet = setString.equals(expectedSets[0]) || setString.equals(expectedSets[1]) ||
                 setString.equals(expectedSets[2]) || setString.equals(expectedSets[3]) ||
                 setString.equals(expectedSets[4]) || setString.equals(expectedSets[5]);
+        
+        System.out.println("------------------------------");
 
         assertTrue("Test entrySet failed - invalid value returned by Set's toString: " + setString, validSet);
     }
@@ -144,7 +158,21 @@ public class HashTableChainTest {
         for (int i = 0; i < 13; i ++) {
             other.put(Integer.toString(i), i);
         }
-
+        
+//        System.out.println("This is the TestEqualsTrue Method:");
+//        System.out.println();
+//        System.out.println("This is the OTHER:");
+//        System.out.println(other.toString());
+//        System.out.println();
+//
+//        
+//        System.out.println("This is the ACTUAL:");
+//        System.out.println(hashTable.toString());
+//        System.out.println();
+//        System.out.println("Testing the Equals Method: " + hashTable.equals(other));
+//        System.out.println();
+//        System.out.println("-----------------------------------------------");
+        
         assertTrue(hashTable.equals(other));
     }
 
@@ -157,6 +185,22 @@ public class HashTableChainTest {
             other.put(Integer.toString(i), i);
         }
         other.put("thirty", 30);
+        
+//        System.out.println();
+//        System.out.println("This is the TestEqualsFalse Method:");
+//        System.out.println();
+//        System.out.println("This is the OTHER:");
+//        System.out.println(other.toString());
+//        System.out.println();
+//
+//        
+//        System.out.println("This is the ACTUAL:");
+//        System.out.println(hashTable.toString());
+//        System.out.println();
+//        System.out.println("Testing the Equals Method: " + hashTable.equals(other));
+//        System.out.println();
+//        System.out.println("-----------------------------------------------");
+      
 
         assertFalse(hashTable.equals(other));
     }

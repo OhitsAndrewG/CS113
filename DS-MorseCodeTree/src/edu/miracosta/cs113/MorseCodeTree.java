@@ -1,5 +1,5 @@
 package edu.miracosta.cs113;
-import java.io.FileInputStream;
+import java.io.FileInputStream; 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,14 +19,19 @@ import edu.miracosta.cs113.BinaryTree.Node;
  */
 public class MorseCodeTree<Chatacter> extends BinaryTree<String>{ //NOTE: it would be a binary tree because you don't need to organize the nodes, you just need to find them based off the mores code given
 	
+	public static final String[] MORSE_LETTERS = {"*-", "-***", "-*-*","-**", "*", "**-*", "--*", "****", 
+			"**","*---", "-*-", "*-**", "--", "-*", "---", 
+			"*--*", "--*-", "*-*","***", "-", "**-",
+			"***-", "*--", "-**-","-*--", "--**"};
+
 	public static final char LEFT_SYMBOL = '*';
 	public static final char RIGHT_SYMBOL = '-';
 	
-
+	//Constructor
 	public MorseCodeTree() {
 		try {
 			this.fileInput();
-		} catch (IOException e) {
+		} catch (IOException e) { 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -99,55 +104,59 @@ public class MorseCodeTree<Chatacter> extends BinaryTree<String>{ //NOTE: it wou
 	
 	
 	
-	//*****INITIAL IMPLEMENTATION*****
+	private String translateMorseCodeWithMorse(String morseCode) {
+		
+    	Node<String> tempNode = this.root; // Temporary node at the root of the tree
+    	String sentence = "";
+    	
+    	String[] morseLetter = morseCode.split(" "); //splitting the morse code into individual letters in morse code
+    	
+    	for(int i = 0; i < morseLetter.length; i ++) { //for every letter in morsecode
+    		
+    		String singleLetter = morseLetter[i]; //one letter in morsecode
+    		
+    		for(int j = 0; j < singleLetter.length(); j ++) { //for every character in the the morse code letter
+    			char singleCharacter = singleLetter.charAt(j);
+    			
+    			if(singleCharacter == LEFT_SYMBOL) { //ISSUE IS HAPPENING HERE
+    																				
+    				tempNode = tempNode.left;	//for sure an issue with tempNode.left that isn't making it run
+    				
+    			}else if(singleCharacter == RIGHT_SYMBOL) {
+    				
+    				tempNode = tempNode.right;
+    			}else {
+    				throw new IllegalArgumentException();
+    			}
+    			
+    			
+    			
+    			
+    		}
+    		
+        		sentence += tempNode.data;
+            	tempNode = this.root;
+    		
+    	}
+    	
+		return sentence;
+		
+	}
 	
-//	//will take in data but based off t
-//	public void add(String data) {
-//		Node<Character> currentNode = this.root;
-//		int dataSize = data.length();
-//		char letter = data.charAt(dataSize - 1); //letter at the very end of the String data(which is a character)
-//		
-//		System.out.println("This is the character: " + letter);
-//		
-//		
-//		
-//		
-//		String mCode = data.substring(0, dataSize - 1); //splitting the Morsecode from the character
-//		
-//		System.out.println("This is the morseCode: " + mCode);
-//		System.out.println("This is the data size: " + dataSize);
-//		System.out.println("------------------------------------");
-//	
-//		
-//		//if the parent node is null create new node as parent/root
-//		if(currentNode == null) {
-//			Node<Character> newNode = new Node<Character>(letter); //also takes in a space as a char
-//			 this.root = newNode;
-//		}
-//		
-//		if(currentNode != null) {
-//			for(int i = 0; i < mCode.length(); i ++) {
-//				
-//				if(LEFT_SYMBOL == mCode.charAt(i) && currentNode.left != null) {
-//					currentNode = currentNode.left;
-//				}else if(RIGHT_SYMBOL == mCode.charAt(i) && currentNode.right != null) {
-//					currentNode = currentNode.right;
-//				}else if(currentNode.left == null) {
-//					currentNode.left = new Node<Character>(letter);
-//				}else if(currentNode.right == null) {
-//					currentNode.right = new Node<Character>(letter); 
-//				}
-//			}
-//				
-//			currentNode = new Node<Character>(letter);
-//		}	
-//		
-//	}
+	public String dislayTree() {
+		String letterAndMorse = " ";
+		String finalSet = "";
+		for(int i = 0; i < 26; i++) {
+			letterAndMorse = this.translateMorseCodeWithMorse(MORSE_LETTERS[i]);
+			finalSet += "[" + letterAndMorse + "] ";
+		}
+		
+		return finalSet;
+	}
 	
 	
 	
 	
-
 	
 	
     // TODO:
