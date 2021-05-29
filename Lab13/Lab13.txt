@@ -1,35 +1,15 @@
 					_Lab13_
 
-1.) 
+1.) you could get a null pointer exception, due to the current cell being outside of the maze. The second case would be a brute force method.
 
-
-2.) The order the neighbor cells would not matter.
+2.) The order the neighbor cells would matter, it could potentially mess up cell behind the current.
 
 3.) The path shown is not the shortest path since it could've done 4-3 rather than its initial.
 
-2.
+  
 
 
 
 
-(String tokenizer)
 
-
-
-
-_HW #7 Morse code_
-
-Left you have *
-Right you get -
-
-read morse code to get characters , if you did it the opposite way it wouldve been harder
-
-Can use a huffman tree, but using a regular tree. 
-How are you going to construct binary tree?
-Start from root, only two possibilities after one right and one left node (left *, right -)
-Each level of the tree is the number of dot and dashes combined
-
-
-There are two orders in which you can traverse a tree_
-1.) 
 
